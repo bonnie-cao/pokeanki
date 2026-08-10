@@ -2,6 +2,7 @@ import importlib
 
 from aqt import gui_hooks
 from aqt.utils import showWarning
+from . import pokedex #register toolbar functions early
 
 
 opened = False

@@ -4,9 +4,10 @@ from aqt import gui_hooks, mw
 from aqt.qt import QDialog, QLabel, QMovie, QVBoxLayout, QTimer, QSize
 
 from .starters import choose_starter
+from .wilds import handle_wild
 
 
-SAVE_NAME = "pokeanki_game5"
+SAVE_NAME = "pokeanki_game12"
 
 
 evolutions = {
@@ -27,10 +28,23 @@ if not game:
     starter = choose_starter()
 
     if starter:
-        game = {"pokemon": starter, "level": 1, "cards": 0}
+        #active = pokemon leveling up (default to starter), collection = all pokemons
+        game = {
+            "cards": 0,
+            "active": 0,
+            "collection": [
+                {
+                    "name": starter,
+                    "level": 1,
+                    "cards": 0,
+                },
+            ],
+        }
         mw.col.set_config(SAVE_NAME, game)
 
 
+
+#level up and evolution message
 def show_pokemon_message(time, message, pokemon):
     dialog = QDialog(mw)
     layout = QVBoxLayout(dialog)
@@ -49,40 +63,59 @@ def show_pokemon_message(time, message, pokemon):
 
     movie.start()
 
-    # move to the bottom-right corner
-    dialog.show()
-    screen = dialog.screen().availableGeometry()
-    popup = dialog.frameGeometry()
+    if time == 1500: #if leveling up, move to corner
+        dialog.show()
+        screen = dialog.screen().availableGeometry()
+        popup = dialog.frameGeometry()
 
-    x = screen.right() - popup.width() - 20
-    y = screen.bottom() - popup.height() - 20
-    dialog.move(x, y)
+        x = screen.right() - popup.width() - 20
+        y = screen.bottom() - popup.height() - 20
+        dialog.move(x, y)
 
-    QTimer.singleShot(time, dialog.accept)
+        QTimer.singleShot(time, dialog.accept)
+        dialog.exec()
+        return
+    
+    else:
+        QTimer.singleShot(time, dialog.accept)
+        dialog.exec()
+        return
 
-    dialog.exec()
 
+#leveling up and evolving
+#edit later to be selected pokemon
 
 def on_card_answered(reviewer, card, ease):
     if not game:
         return
 
+    #count cards for ANY pokemon
     game["cards"] += 1
+    handle_wild(game)
 
-    # level up after every 5 cards
-    if game["cards"] % 5 == 0:
-        game["level"] += 1
+    #find active pokemon
+    active = game["collection"][game["active"]]
+    active["cards"] += 1
+
+    # level up after every 5 cards for ACTIVE pokemon
+    if active["cards"] % 5 == 0:
+        active["level"] += 1
 
         # evolve at levels 10 and 15
-        if game["level"] in (10, 15) and game["pokemon"] in evolutions:
-            old_pokemon = game["pokemon"]
-            game["pokemon"] = evolutions[old_pokemon]
-            message = f'{old_pokemon} evolved into {game["pokemon"]}!'
-            show_pokemon_message(2000, message, game["pokemon"])
+        if active["level"] in (10, 15) and active["name"] in evolutions:
+            old_pokemon = active["name"] #identify pre-evolution pokemon
+            active["name"] = evolutions[old_pokemon] #evolve and update pokemon name
+            message = f'{old_pokemon} evolved into {active["name"]}!'
+            show_pokemon_message(2000, message, active["name"])
+
+            # #find old pokemon in collection
+            # index = game["collection"].index(old_pokemon) 
+            # #replace old pokemon with evolved pokemon in collection
+            # game["collection"][index] = active["name"]
 
         else:
-            message = f'{game["pokemon"]} reached level {game["level"]}!'
-            show_pokemon_message(1500, message, game["pokemon"])
+            message = f'{active["name"]} reached level {active["level"]}!'
+            show_pokemon_message(1500, message, active["name"])
 
     mw.col.set_config(SAVE_NAME, game)
 
