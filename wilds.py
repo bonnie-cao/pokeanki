@@ -10,7 +10,10 @@ from aqt.qt import QDialog, QLabel, QVBoxLayout, QMovie, QSize, QPushButton, QKe
 
 #make random
 # future, add random shiny types?
-wild_types = ["Pikachu", "Eevee", "Jigglypuff", "Vulpix, Bulbasaur, Charmander, Squirtle, Rowlet, Wooloo, Munchlax"]
+wild_types = ["Pikachu", "Eevee", "Jigglypuff", "Vulpix",
+              "Bulbasaur", "Charmander", "Squirtle", "Rowlet",
+              "Wooloo", "Munchlax", "Scolipede", "Azelf",
+              "Mudkip", "Oshawott"]
 
 #bellcurve function to randomize: pokeballs needed, flashcards until wild type appears
 def bell_curve(middle, spread):

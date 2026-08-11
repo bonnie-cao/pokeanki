@@ -1,4 +1,5 @@
 from pathlib import Path
+import random
 
 from aqt import gui_hooks, mw
 from aqt.qt import QDialog, QLabel, QMovie, QVBoxLayout, QTimer, QSize
@@ -7,9 +8,10 @@ from .starters import choose_starter
 from .wilds import handle_wild
 
 
-SAVE_NAME = "pokeanki_game17"
+SAVE_NAME = "pokeanki_game18"
 
-
+eevee_evols = ["Flareon", "Vaporeon", "Jolteon", "Espeon",
+               "Umbreon", "Leafeon", "Glaceon", "Sylveon"]
 evolutions = {
     "Bulbasaur": "Ivysaur",
     "Ivysaur": "Venusaur",
@@ -18,11 +20,15 @@ evolutions = {
     "Squirtle": "Wartortle",
     "Wartortle": "Blastoise",
     "Pikachu": "Raichu",
-    "Eevee": "Flareon or Vaporeon or Jolteon or Espeon or Umbreon or Leafeon or Glaceon or Sylveon",
+    "Eevee": random.choice(eevee_evols),
     "Jigglypuff": "Wigglytuff",
     "Vulpix": "Ninetales",
     "Wooloo": "Dubwool",
-    "Munchlax": "Snorlax"
+    "Munchlax": "Snorlax",
+    "Mudkip": "Marshtomp",
+    "Marshtomp": "Swampert",
+    "Oshawott": "Dewott",
+    "Dewott": "Samurott"
 }
 
 
