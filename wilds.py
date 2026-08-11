@@ -13,7 +13,9 @@ from aqt.qt import QDialog, QLabel, QVBoxLayout, QMovie, QSize, QPushButton, QKe
 wild_types = ["Pikachu", "Eevee", "Jigglypuff", "Vulpix",
               "Bulbasaur", "Charmander", "Squirtle", "Rowlet",
               "Wooloo", "Munchlax", "Scolipede", "Azelf",
-              "Mudkip", "Oshawott"]
+              "Mudkip", "Oshawott", "Magikarp", "Froakie", "Frogadier",
+              "Riolu", "Gastly", "Haunter", "Psyduck", "Dratini",
+              "Pidgey", "Pidgeotto", "Rattata", "Chansey"]
 
 #bellcurve function to randomize: pokeballs needed, flashcards until wild type appears
 def bell_curve(middle, spread):

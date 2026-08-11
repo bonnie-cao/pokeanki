@@ -27,9 +27,17 @@ evolutions = {
     "Munchlax": "Snorlax",
     "Mudkip": "Marshtomp",
     "Marshtomp": "Swampert",
-    "Oshawott": "Dewott",
-    "Dewott": "Samurott"
+    "Gastly": "Haunter",
+    "Haunter": "Gengar",
+    "Psyduck": "Golduck",
+    "Dratini": "Dragonair",
+    "Dragonair": "Dragonite",
+    "Pidgey": "Pidgeotto",
+    "Pidgeotto": "Pidgeot",
+    "Rattata": "Raticate",
+    "Chansey": "Blissey"
 }
+
 
 
 # load previous progress

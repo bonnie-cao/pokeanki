@@ -1,4 +1,5 @@
 Use this Anki add-on to incorporate the Pokemon game into studying!
+Add-on here: https://ankiweb.net/shared/info/1977818525
 
 Choose a starter Pokemon to get started, and evolve your starter pokemon as you complete flashcards.
 
