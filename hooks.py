@@ -7,7 +7,7 @@ from .starters import choose_starter
 from .wilds import handle_wild
 
 
-SAVE_NAME = "pokeanki_game12"
+SAVE_NAME = "pokeanki_game17"
 
 
 evolutions = {
@@ -17,6 +17,12 @@ evolutions = {
     "Charmeleon": "Charizard",
     "Squirtle": "Wartortle",
     "Wartortle": "Blastoise",
+    "Pikachu": "Raichu",
+    "Eevee": "Flareon or Vaporeon or Jolteon or Espeon or Umbreon or Leafeon or Glaceon or Sylveon",
+    "Jigglypuff": "Wigglytuff",
+    "Vulpix": "Ninetales",
+    "Wooloo": "Dubwool",
+    "Munchlax": "Snorlax"
 }
 
 
