@@ -27,6 +27,12 @@ evolutions = {
     "Munchlax": "Snorlax",
     "Mudkip": "Marshtomp",
     "Marshtomp": "Swampert",
+    "Oshawott": "Dewott",
+    "Dewott": "Samurott",
+    "Magikarp": "Gyarados",
+    "Froakie": "Frogadier",
+    "Frogadier": "Greninja",
+    "Riolu": "Lucario",
     "Gastly": "Haunter",
     "Haunter": "Gengar",
     "Psyduck": "Golduck",
@@ -37,7 +43,6 @@ evolutions = {
     "Rattata": "Raticate",
     "Chansey": "Blissey"
 }
-
 
 
 # load previous progress
