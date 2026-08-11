@@ -15,7 +15,8 @@ wild_types = ["Pikachu", "Eevee", "Jigglypuff", "Vulpix",
               "Wooloo", "Munchlax", "Scolipede", "Azelf",
               "Mudkip", "Oshawott", "Magikarp", "Froakie", "Frogadier",
               "Riolu", "Gastly", "Haunter", "Psyduck", "Dratini",
-              "Pidgey", "Pidgeotto", "Rattata", "Chansey"]
+              "Pidgey", "Pidgeotto", "Rattata", "Chansey", "Meowth", "Chikorita",
+              "Bayleef", "Fennekin", "Pachirisu", "Cleffa", "Clefairy"]
 
 #bellcurve function to randomize: pokeballs needed, flashcards until wild type appears
 def bell_curve(middle, spread):

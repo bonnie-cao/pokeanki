@@ -8,7 +8,7 @@ from .starters import choose_starter
 from .wilds import handle_wild
 
 
-SAVE_NAME = "pokeanki_game18"
+SAVE_NAME = "pokeanki_game17"
 
 eevee_evols = ["Flareon", "Vaporeon", "Jolteon", "Espeon",
                "Umbreon", "Leafeon", "Glaceon", "Sylveon"]
@@ -41,7 +41,14 @@ evolutions = {
     "Pidgey": "Pidgeotto",
     "Pidgeotto": "Pidgeot",
     "Rattata": "Raticate",
-    "Chansey": "Blissey"
+    "Chansey": "Blissey",
+    "Meowth": "Persian",
+    "Chikorita": "Bayleef",
+    "Bayleef": "Meganium",
+    "Fennekin": "Braixen",
+    "Braixen": "Delphox",
+    "Cleffa": "Clefairy",
+    "Clefairy": "Clefable"
 }
 
 
